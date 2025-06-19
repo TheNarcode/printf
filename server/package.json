@@ -8,10 +8,15 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.4",
+    "@libsql/client": "^0.15.9",
+    "better-sse": "^0.15.1",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
     "hono": "^4.7.11"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "drizzle-kit": "^0.31.1",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3"
   }
