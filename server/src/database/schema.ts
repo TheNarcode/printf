@@ -38,6 +38,11 @@ export const files = sqliteTable("files", {
   // pages_per_sheet: integer("pages_per_sheet").notNull().default(1),
 });
 
+export const metadata = sqliteTable("metadata", {
+  file: text("id").primaryKey(),
+  pages: integer("pages").notNull(),
+});
+
 export const usersRelation = relations(users, ({ many }) => ({
   orders: many(orders),
 }));

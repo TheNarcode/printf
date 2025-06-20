@@ -8,6 +8,13 @@
       "when": 1750401650908,
       "tag": "0000_freezing_nightcrawler",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1750424419784,
+      "tag": "0001_misty_spot",
+      "breakpoints": true
     }
   ]
 }
