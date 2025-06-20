@@ -4,6 +4,7 @@ import { z } from "zod";
 import db from "../database/index.js";
 import { metadata, orders, files } from "../database/schema.js";
 import { eq } from "drizzle-orm";
+import { razorpay } from "../razorpay.js";
 
 const app = new Hono();
 
@@ -46,10 +47,14 @@ app.post(
 
     // insert with order id and user id in files
     // await db.insert(files).values({ });
-    
-    
 
-    return c.text("ok");
+    const response = await razorpay.orders.create({
+      amount: "100",
+      currency: "INR",
+      receipt: "payment for print #1",
+    });
+
+    return c.json({ data, response });
   },
 );
 

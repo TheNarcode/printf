@@ -10,6 +10,8 @@ const app = new Hono();
 // todo: add auth (any user can upload a file and get a filename)
 app.post("/upload", async (c) => {
   const { file } = await c.req.parseBody();
+  
+  console.log(file)
 
   if (!(file instanceof File)) return c.text("invalid file type", 200);
   if (file.type != "application/pdf") return c.text("only pdf support", 200);
@@ -17,7 +19,7 @@ app.post("/upload", async (c) => {
 
   const arrayBuffer = await file.arrayBuffer();
   const uint8Array = new Uint8Array(arrayBuffer);
-  const filename = `${crypto.randomUUID()}.pdf`;
+  const filename = `${crypto.randomUUID()}`;
 
   const command = new PutObjectCommand({
     Bucket: process.env.BUCKET,
