@@ -1,12 +1,12 @@
 import { createResponse } from "better-sse";
 import { Hono } from "hono";
-import { channel } from "../channels/test.js";
+import { orderChannel } from "../channels/orderChannel.js";
 
 const app = new Hono();
 
 app.get("/sse", (c) =>
   createResponse(c.req.raw, (session) => {
-    channel.register(session);
+    orderChannel.register(session);
   }),
 );
 

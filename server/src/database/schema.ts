@@ -8,6 +8,7 @@ export const users = sqliteTable("users", {
 
 export const orders = sqliteTable("orders", {
   id: text("id").primaryKey(),
+  name: text("name").notNull(),
   user: text("user").notNull(),
   amount: real("amount").notNull(),
   paid: integer("paid", { mode: "boolean" }).notNull().default(false),
@@ -24,18 +25,13 @@ export const orders = sqliteTable("orders", {
 export const files = sqliteTable("files", {
   id: text("id").primaryKey(),
   order: text("order").notNull(),
-  isLandscape: integer("is_landscape", { mode: "boolean" })
-    .notNull()
-    .default(false),
-  isColor: integer("is_color", { mode: "boolean" }).notNull().default(false),
-  copies: integer("copies").notNull().default(1),
-  paperFormat: text("paper_format", { enum: ["a4", "a3"] })
-    .notNull()
-    .default("a4"),
+  orientation: text("orientation").notNull(),
+  color: text("color").notNull(),
+  copies: text("copies").notNull(),
+  paperFormat: text("paper_format").notNull(),
   file: text("file").notNull(),
-  // future additions
-  // pages_to_print: text("pages_to_print").notNull(), // check in server
-  // pages_per_sheet: integer("pages_per_sheet").notNull().default(1),
+  pageRanges: text("page_ranges").notNull(),
+  numberUp: text("number_up").notNull(),
 });
 
 export const metadata = sqliteTable("metadata", {
