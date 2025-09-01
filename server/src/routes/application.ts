@@ -19,6 +19,7 @@ app.post(
     "json",
     z.array(
       z.object({
+        // need to add 3 more fields - numberUp, sides, pageRanges
         isLandscape: z.boolean().default(false),
         isColor: z.boolean().default(false),
         copies: z.number().default(1),

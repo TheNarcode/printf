@@ -23,5 +23,4 @@ const auth = createMiddleware<{ Variables: { payload: TokenPayload } }>(
     }
   },
 );
-
 export { auth as authMiddleware };
