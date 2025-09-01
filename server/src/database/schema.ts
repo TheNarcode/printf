@@ -32,6 +32,7 @@ export const files = sqliteTable("files", {
   file: text("file").notNull(),
   pageRanges: text("page_ranges").notNull(),
   numberUp: text("number_up").notNull(),
+  sides: text("sides").notNull(),
 });
 
 export const metadata = sqliteTable("metadata", {
