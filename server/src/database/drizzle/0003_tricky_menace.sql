@@ -1,1 +1,0 @@
-ALTER TABLE `files` ADD `sides` text NOT NULL;

@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1750401650908,
-      "tag": "0000_freezing_nightcrawler",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1750424419784,
-      "tag": "0001_misty_spot",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1756736108860,
-      "tag": "0002_steep_karma",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1756738154891,
-      "tag": "0003_tricky_menace",
+      "when": 1757149051180,
+      "tag": "0000_thankful_toad",
       "breakpoints": true
     }
   ]

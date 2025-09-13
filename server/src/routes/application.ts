@@ -14,7 +14,7 @@ const client = new OAuth2Client();
 
 app.post(
   "/upload",
-  authMiddleware,
+  // authMiddleware,
   zValidator(
     "json",
     z.array(
@@ -54,23 +54,26 @@ app.post(
     // insert with order id and user id in files
     // await db.insert(files).values({ });
 
-    const response = await razorpay.orders.create({
-      amount: "100",
-      currency: "INR",
-      receipt: "payment for print #1",
-    });
+    // const response = await razorpay.orders.create({
+    //   amount: "100",
+    //   currency: "INR",
+    //   receipt: "payment for print #1",
+    // });
 
     const datax = {
-      file: "test/edith.pdf",
-      orientation: "3",
+      file: "1e67f243-fbd9-4855-990e-b187de04fd20",
+      orientation: "4",
       color: "Monochrome",
       copies: "1", // 9999 max hota hai
       paperFormat: "iso_a4_210x297mm",
+      pageRanges: "1",
+      numberUp: "1",
+      sides: "one-sided",
     };
 
-    orderChannel.broadcast(JSON.stringify(datax), "update");
+    orderChannel.broadcast(datax, "update");
 
-    return c.json({ data, response });
+    return c.json({ data });
   },
 );
 
